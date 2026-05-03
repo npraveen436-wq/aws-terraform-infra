@@ -37,6 +37,9 @@ resource "aws_instance" "webserver" {
   vpc_security_group_ids = [aws_security_group.webserver.id]
   key_name               = "gitnew" # your existing keypair
 
-  tags = { Name = "webserver-${terraform.workspace}" }
+  tags = {
+    Name       = "webserver-${terraform.workspace}"
+    CostCenter = "engineering"
+    Tier       = "backend"
+  }
 }
-
