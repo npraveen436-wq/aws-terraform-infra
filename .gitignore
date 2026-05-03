@@ -1,0 +1,42 @@
+# ---- Terraform ----
+
+# Local .terraform directories (downloaded providers, modules)
+**/.terraform/*
+
+# State files - NEVER commit these. They contain secrets.
+*.tfstate
+*.tfstate.*
+*.tfstate.backup
+
+# Variable files - often contain secrets like API keys
+*.tfvars
+*.tfvars.json
+!example.tfvars        # allow example files
+
+# Crash log files
+crash.log
+crash.*.log
+
+# Override files - typically used locally
+override.tf
+override.tf.json
+*_override.tf
+*_override.tf.json
+
+# CLI configuration
+.terraformrc
+terraform.rc
+
+# ---- AWS / SSH credentials ----
+*.pem
+*.ppk
+.aws/
+
+# ---- OS / editor junk ----
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
+*.swp
+*.swo
+
