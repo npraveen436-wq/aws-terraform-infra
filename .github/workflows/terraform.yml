@@ -58,6 +58,9 @@ jobs:
       - name: Terraform Init
         run: terraform init
 
+      - name: Terraform Workspace
+        run: terraform workspace select dev || terraform workspace new dev
+
       - name: Terraform Validate
         run: terraform validate
 
