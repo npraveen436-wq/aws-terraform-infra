@@ -6,7 +6,12 @@
 
 resource "aws_s3_bucket" "my_bucket" {
   bucket = "my-app-bucket-${terraform.workspace}-pnethu-2026" # CHANGE this
-
-  tags = { Name = "my-bucket-${terraform.workspace}" }
+  tags = {
+    Name       = "my-bucket-${terraform.workspace}"
+    DeployedBy = "github-actions"
+    Owner      = "pnethu"
+    Purpose    = "learning-terraform"
+  }
 }
+
 
