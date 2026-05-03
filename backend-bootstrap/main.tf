@@ -17,7 +17,7 @@ provider "aws" {
 
 # -------- S3 bucket where state files will live --------
 resource "aws_s3_bucket" "tfstate" {
-  bucket = "my-tfstate-pnethu-2026"   # <-- CHANGE to a globally unique name
+  bucket = "my-tfstate-pnethu-2026" # <-- CHANGE to a globally unique name
 
   # Safety net: prevent accidental deletion.
   # If you want to destroy this later, set this to false first.
@@ -71,7 +71,7 @@ resource "aws_s3_bucket_public_access_block" "tfstate" {
 # Prevents two people from corrupting state simultaneously.
 resource "aws_dynamodb_table" "tflock" {
   name         = "terraform-state-lock"
-  billing_mode = "PAY_PER_REQUEST"   # ~free for this use case
+  billing_mode = "PAY_PER_REQUEST" # ~free for this use case
   hash_key     = "LockID"
 
   attribute {
