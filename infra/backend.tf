@@ -12,7 +12,7 @@
 
 terraform {
   backend "s3" {
-    bucket         = "my-tfstate-pnethu-2026"   # <-- match the bucket from backend-bootstrap
+    bucket         = "my-tfstate-pnethu-2026" # <-- match the bucket from backend-bootstrap
     key            = "projects/aws-jumpbox/terraform.tfstate"
     region         = "us-east-1"
     dynamodb_table = "terraform-state-lock"

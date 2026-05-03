@@ -13,7 +13,7 @@ resource "aws_security_group" "jumpbox" {
     from_port   = 22
     to_port     = 22
     protocol    = "tcp"
-    cidr_blocks = ["0.0.0.0/0"]   # tighten this to YOUR_IP/32 for safety
+    cidr_blocks = ["0.0.0.0/0"] # tighten this to YOUR_IP/32 for safety
   }
 
   egress {

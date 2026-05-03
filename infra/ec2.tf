@@ -24,7 +24,7 @@ resource "aws_instance" "jumpbox" {
   instance_type          = "t3.micro"
   subnet_id              = aws_subnet.public.id
   vpc_security_group_ids = [aws_security_group.jumpbox.id]
-  key_name               = "gitnew"   # your existing keypair
+  key_name               = "gitnew" # your existing keypair
 
   tags = { Name = "jumpbox-${terraform.workspace}" }
 }
@@ -35,7 +35,7 @@ resource "aws_instance" "webserver" {
   instance_type          = "t3.micro"
   subnet_id              = aws_subnet.private.id
   vpc_security_group_ids = [aws_security_group.webserver.id]
-  key_name               = "gitnew"   # your existing keypair
+  key_name               = "gitnew" # your existing keypair
 
   tags = { Name = "webserver-${terraform.workspace}" }
 }
